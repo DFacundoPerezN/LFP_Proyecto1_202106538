@@ -6,8 +6,8 @@ aTecnico= "Manuales\MANUAL TECNICO.pdf"
 aUsuario= 'Manuales\MANUAL USUARIO.pdf'
 
 def TemasAyuda():
-    import Interfaz.TemasAyuda
-    Interfaz.TemasAyuda.abrirWindowTA()
+    import InterfazAyuda.TemasAyuda
+    InterfazAyuda.TemasAyuda.abrirWindowTA()
 
 def abrirWindowA():
     windowHelp = tk.Tk()

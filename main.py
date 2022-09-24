@@ -4,7 +4,7 @@ def abrirMenuArchivos():
     import MenuArchivos
     MenuArchivos.abrirWindowMA()
 def abrirMenuAyuda():
-    import MenuAyuda
+    import InterfazAyuda.MenuAyuda as MenuAyuda
     MenuAyuda.abrirWindowA()
 
 windowInicio = tk.Tk()
