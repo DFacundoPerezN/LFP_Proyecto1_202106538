@@ -1,7 +1,7 @@
 <Tipo>
 <Operacion= SUMA>
-	<Numero> 4.5 </Numero>
-	<Numero> 5.32 </Numero>
+<Numero> 4.5 </Numero>
+<Numero> 5.32 </Numero>
 </Operacion>
 <Operacion= RESTA>
 <Numero> 84 </Numero>
@@ -25,8 +25,8 @@
 </Tipo>
 
 <Texto>
-Realizar las operaciones b√°sicas de suma, resta, multiplicaci√≥n y
-divisi√≥n, as√≠ como operaciones complejas.
+Realizar las operaciones b·sicas de suma, resta, multiplicaciÛn y
+divisiÛn, asÌ como operaciones complejas.
 </Texto>
 <Funcion = ESCRIBIR>
 <Titulo> Operaciones </Titulo>

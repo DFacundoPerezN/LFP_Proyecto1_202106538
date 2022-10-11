@@ -1,6 +1,19 @@
 import tkinter as tk
+import subprocess
+import CrearArchivos.Guardar as Guardar
+from RevisarErrores import *
 
+def abrirArchivo(ruta):
+    try:
+        subprocess.Popen([ruta], shell=True)
+    except:
+        print("Hubo un fallo al abrir el archivo, revise su ruta")
 
+def guardarArchivo(ruta,nombreArchivo = "Archivo.txt"):
+    Guardar.guardar(ruta, nombreArchivo)
+
+def revisarArchivo(ruta):
+    revisar(ruta)
 
 def abrirWindowMA():
     windowMA = tk.Tk()
@@ -15,22 +28,22 @@ def abrirWindowMA():
     textBox1 = tk.Entry(windowMA, text="")
     textBox1.grid(row=0,column=2)
 
-    button1= tk.Button(windowMA, text ="Abrir Archivo", bg="#48dbfb") #Abre el Archivo para poder editarlo
+    button1= tk.Button(windowMA, text ="Abrir Archivo",command=lambda: abrirArchivo(textBox1.get()), bg="#48dbfb") #Abre el Archivo para poder editarlo
     button1.grid(row=1,column=1, padx=10,pady=10)
 
-    button2= tk.Button(windowMA, text ="Guardar Archivo", bg="#48dbfb") #Guarda el archivo
+    button2= tk.Button(windowMA, text ="Guardar Archivo",command=lambda: guardarArchivo(textBox1.get()), bg="#48dbfb") #Guarda el archivo
     button2.grid(row=2,column=1, padx=10,pady=10)
 
     textBox2 = tk.Entry(windowMA)  
     textBox2.grid(row=3,column=2)
 
-    button3= tk.Button(windowMA, text ="Guardar Archivo Como: ", bg="#48dbfb") #Guarda el Archivo con el nombre especificado
+    button3= tk.Button(windowMA, text ="Guardar Archivo Como: ",command=lambda: guardarArchivo(textBox1.get(), textBox2.get()), bg="#48dbfb") #Guarda el Archivo con el nombre especificado
     button3.grid(row=3,column=1, padx=10,pady=10)
 
     button4= tk.Button(windowMA, text ="Analizar Información de Archivo", bg="#48dbfb") #Imprime la informacion presente en el archivo
     button4.grid(row=4,column=1, padx=10,pady=10)
 
-    button5= tk.Button(windowMA, text ="Revisión de Errores",command=windowMA.destroy, bg="#48dbfb")   #Revisa los Errores del Archivo
+    button5= tk.Button(windowMA, text ="Revisión de Errores",command=lambda: revisarArchivo(textBox1.get()), bg="#48dbfb")   #Revisa los Errores del Archivo
     button5.grid(row=5,column=1)
 
     button5= tk.Button(windowMA, text ="Regresar",command=windowMA.destroy, bg="#ff6b6b")   #Botón de regresar

@@ -1,6 +1,5 @@
 import math
 
-
 def ejecutarOperacion(operacion, a= None, b=None): #Metodo para todas las operaciones
     match operacion:
         case "SUMA"| "suma":
@@ -16,7 +15,7 @@ def ejecutarOperacion(operacion, a= None, b=None): #Metodo para todas las operac
         case "RAIZ"|"raiz":
             return a^(1/b)
         case "MOD"|"mod":
-            return a%7
+            return a%b
         case "INVERSO"|"inverso":
             return 1/a
         case "SENO"|"seno":
@@ -27,4 +26,6 @@ def ejecutarOperacion(operacion, a= None, b=None): #Metodo para todas las operac
             return math.tan(a)
         case _:
             print("¡OPERACIÓN NO VÁLIDA!")
+
+print(ejecutarOperacion("inverso",4))
 

@@ -9,7 +9,7 @@ def LeerEt(datos):
         else:
             print(etiqueta)
             break
-        
+
     aux= contador
     for objeto in datos[contador:len(datos)]:
         
@@ -41,12 +41,9 @@ def seleccionarEtiqueta(etiqueta):
 
 
 
-
-
-def cargaMasiva(ruta=None):  
+def cargaMasiva(nombreArchivo='Archivo.txt'):  
         print('Subiendo datos') #Declaracion de que se estan subiendo
-        print("Ruta: ", ruta)
-        nombreArchivo = 'Archivo.txt'
+        print("Ruta: ", nombreArchivo)
         #nombreArchivo = ruta  tomar nombre y ruta del archivo de la barra de texto
         archivo = open (nombreArchivo,'r',encoding = "utf-8")   #Creando la variable archivo para python y diciendo qeu le lea con tildes y ñ
         datos = archivo.read()  #la variable datos toma el texto del archivo
