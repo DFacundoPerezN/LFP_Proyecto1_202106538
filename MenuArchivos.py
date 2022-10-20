@@ -2,6 +2,13 @@ import tkinter as tk
 import subprocess
 import CrearArchivos.Guardar as Guardar
 from RevisarErrores import *
+import Analizador
+
+def hacerHTML(ruta):
+    try:
+        Analizador.crearHTMLResultados(ruta)
+    except:
+        print("Hubo un fallo al abrir el archivo, revise su ruta")
 
 def abrirArchivo(ruta):
     try:
@@ -40,7 +47,7 @@ def abrirWindowMA():
     button3= tk.Button(windowMA, text ="Guardar Archivo Como: ",command=lambda: guardarArchivo(textBox1.get(), textBox2.get()), bg="#48dbfb") #Guarda el Archivo con el nombre especificado
     button3.grid(row=3,column=1, padx=10,pady=10)
 
-    button4= tk.Button(windowMA, text ="Analizar Información de Archivo", bg="#48dbfb") #Imprime la informacion presente en el archivo
+    button4= tk.Button(windowMA, text ="Analizar Información de Archivo",command=lambda: hacerHTML(textBox1.get()), bg="#48dbfb") #Imprime la informacion presente en el archivo
     button4.grid(row=4,column=1, padx=10,pady=10)
 
     button5= tk.Button(windowMA, text ="Revisión de Errores",command=lambda: revisarArchivo(textBox1.get()), bg="#48dbfb")   #Revisa los Errores del Archivo

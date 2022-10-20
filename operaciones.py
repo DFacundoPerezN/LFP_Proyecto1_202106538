@@ -27,5 +27,5 @@ def ejecutarOperacion(operacion, a= None, b=None): #Metodo para todas las operac
         case _:
             print("¡OPERACIÓN NO VÁLIDA!")
 
-print(ejecutarOperacion("inverso",4))
+
 

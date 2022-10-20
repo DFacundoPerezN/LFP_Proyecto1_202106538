@@ -39,21 +39,24 @@ def seleccionarEtiqueta(etiqueta):
             print("¡ETIQUETA NO VÁLIDA!")
 
 
-
-
 def cargaMasiva(nombreArchivo='Archivo.txt'):  
         print('Subiendo datos') #Declaracion de que se estan subiendo
         print("Ruta: ", nombreArchivo)
         #nombreArchivo = ruta  tomar nombre y ruta del archivo de la barra de texto
         archivo = open (nombreArchivo,'r',encoding = "utf-8")   #Creando la variable archivo para python y diciendo qeu le lea con tildes y ñ
         datos = archivo.read()  #la variable datos toma el texto del archivo
-        datos=datos.replace("\t", "")
-        #print(datos)      
+
+        datos=datos.replace("\t", "")     
         datos=datos.replace("\n", "")
         datos=datos.replace(" ", "")
-        #print(datos)
+        
         LeerEt(datos)
         archivo.close()     #cierra el archivo
 
-cargaMasiva()
+def conseguirTexto(datos):
+    datosSeparados=datos.split("<Texto>")
+    datosSeparados=datosSeparados[1].split("</Texto>")
+    print(datosSeparados)
+
+
 

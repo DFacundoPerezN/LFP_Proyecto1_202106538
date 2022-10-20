@@ -16,7 +16,7 @@
 <Numero> 9 </Numero>
 </Operacion>
 <Operacion= SUMA>
-<Numero> 5.4 <Numero>
+<Numero> 5.4 </Numero>
 <Operacion= MULTIPLICACION>
 <Numero> 7.8 </Numero>
 <Numero> 4.3 </Numero>
@@ -25,8 +25,8 @@
 </Tipo>
 
 <Texto>
-Realizar las operaciones básicas de suma, resta, multiplicación y
-división, así como operaciones complejas.
+Realizar las operaciones bï¿½sicas de suma, resta, multiplicaciï¿½n y
+divisiï¿½n, asï¿½ como operaciones complejas.
 </Texto>
 <Funcion = ESCRIBIR>
 <Titulo> Operaciones </Titulo>

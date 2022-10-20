@@ -6,11 +6,10 @@ def revisar(ruta):
         datos = archivo.read()
         revisarErrores(datos)
         erroresHTML(datos)
-
+        conseguirTexto(datos)
         archivo.close()
 
-        print(datos)
-
+        #print(datos)
 
 def revisarErrores(datos):
         nFila=0
@@ -25,16 +24,23 @@ def revisarErrores(datos):
                         nColumna=nColumna+1
                         
                         if(token.isdigit()|token.isalpha() or token==" " or token == ">" or token=="<" or token == "/" or token=="," or token == "[" or token=="]" or token == "=" or token == "."):
-                                print('es caracter aceptado',token)
+                                nError=nError
                         else:
                                 nError=nError+1
                                 print("Error # ", nError, ". ",token, "Fila: ",nFila, "  Columna: ",nColumna)
 
-                
+def conseguirTexto(datos):
+    datosSeparados=datos.split("<Texto>")
+    datosSeparados=datosSeparados[1].split("</Texto>")
+    print(datosSeparados[0])
     
-#revisar("Archivo.txt")    
+revisar("Archivo.txt")    
 texto=" hola \nque tal?"
 
-print(texto)
-revisarErrores(texto)
-erroresHTML(texto)
+prueba="rrrr <Texto> EN MEDIO </Texto> AMAMAMAMMA"
+
+#conseguirTexto(prueba)
+
+#print(texto)
+#revisarErrores(texto)
+#erroresHTML(texto)
